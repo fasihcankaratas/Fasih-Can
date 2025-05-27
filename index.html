@@ -89,6 +89,20 @@
   ======================================================== -->
 </head>
 <style>
+
+/* Normal mod - sol menü veya sidebar yazıları */
+#sidebar, /* sidebar id'si örnek, kendi sitendekini koy */
+.sidebar, /* veya .sidebar class'ı */
+nav, /* menü varsa */
+.menu-text, /* senin kullandığın class/id ise buraya yaz */
+
+{
+  background-color: #222; /* Koyu ama sosyal medya simgeleri ile uyumlu arka plan */
+  color: #eee !important; /* Yazı rengini kesin açık yap, !important ile zorla */
+  /* font-weight: 600; istersen yazıyı biraz daha kalın yapar */
+}
+
+
  /* --- Genel Body Stil --- */
 body {
   background-color: #ffffff;
@@ -221,13 +235,13 @@ body.dark-mode header.header {
   background-color: #222;
 }
 
-/* Dark mode’da footer yazıları daha belirgin olsun */
-body.dark-mode footer {
-  color: #ccc; /* Daha açık gri yap */
-  background-color: #111; /* Eğer arka plan koyu değilse koyu yap */
-  /* gerekirse padding/margin vs de ayarla */
+body.dark-mode footer, /* footer id/class örneği */
+body.dark-mode #footer,
+body.dark-mode .footer
+{
+  color: #ddd !important; /* Çok açık, okunabilir renk */
+  background-color: #111 !important; /* Eğer arka plan koyu değilse koyulaştır */
 }
-
 /* Sosyal ikonlar */
 body.dark-mode .social-links a {
   color: #9ecfff;
