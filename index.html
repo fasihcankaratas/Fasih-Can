@@ -286,7 +286,10 @@ body.dark-mode footer button {
 /* Responsive için buton pozisyonu */
 @media (max-width: 768px) {
   #dark-mode-toggle {
-    bottom: 50px !important;
+    position: fixed;
+    bottom: 10px;   /* Alt kenardan 10px yukarı */
+    right: 15px;    /* Sağ kenardan 15px içeride */
+    top: auto;      /* top özelliğini sıfırla */
   }
 }
 
