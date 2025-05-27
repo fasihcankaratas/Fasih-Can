@@ -294,15 +294,18 @@
 
     /* --- Responsive (mobil) buton konumu --- */
     @media (max-width: 768px) {
-        #darkModeToggle {
-            top: auto !important;
-            /* üst konumu iptal et */
-            bottom: auto !important;
-            /* alt kenardan 10px yukarı */
-            left: 15px !important;
-            /* sağdan 15px içeride */
-        }
+    #darkModeToggle {
+        top: auto !important;        /* üst konumu iptal et */
+        bottom: 10px !important;     /* alt kenardan 10px yukarı */
+        left: 15px !important;       /* soldan 15px içeride */
+        right: auto !important;      /* sağ konumu iptal et */
+        padding: 8px 12px !important; /* biraz daha küçük padding */
+        border-radius: 20px !important; /* daha yuvarlak köşeler */
+        width: auto !important;      /* genişlik içeriğe göre */
+        min-width: 50px !important;  /* minimum genişlik */
+        font-size: 14px !important;  /* biraz daha küçük yazı */
     }
+}
 </style>
 
     
