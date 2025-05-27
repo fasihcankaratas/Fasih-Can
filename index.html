@@ -90,18 +90,7 @@
 </head>
 <style>
  /* 1. Body ve genel arkaplan */
-body.dark-mode {
-body.dark-mode button,
-body.dark-mode input[type="button"],
-body.dark-mode input[type="submit"] {
-  background-color: #444 !important;  /* Koyu ama görünebilir */
-  color: #eee !important;             /* Açık renk yazı */
-  border: 1px solid #888 !important;  /* Hafif kontrast */
-  padding: 8px 16px;
-  cursor: pointer;
-  display: inline-block;              /* Görünürlük için */
-  opacity: 1 !important;
-}
+ body.dark-mode {
   background-color: #121212 !important;
   color: #e0e0e0 !important;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -282,7 +271,7 @@ body.dark-mode input[type="submit"] {
 </style>
 <body class="index-page"><!-- Sayfa gövdesi, 'index-page' sınıfı sayfa stilini belirler -->
 
-    <button class="dark-toggle-btn" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+    <button id="darkModeToggle" class="dark-toggle-btn">🌙 Karanlık Mod</button>
 
     <header id="header" class="header dark-background d-flex flex-column"><!-- Üst kısım, sabit menü ve profil alanı -->
         <i class="header-toggle d-xl-none bi bi-list"></i><!-- Mobilde açılır menü ikonu -->
@@ -1320,12 +1309,69 @@ body.dark-mode input[type="submit"] {
     <!-- Projenin ana JavaScript dosyası -->
 
     <script>
-        const btn = document.getElementById('darkModeToggle');
-
-        btn.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-        });
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+    const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+    
+    // Sayfa yüklendiğinde kayıtlı tercihi kontrol et
+    function loadThemePreference() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+    enableDarkMode();
+    } else if (savedTheme === 'light') {
+    disableDarkMode();
+    } else if (prefersDarkScheme.matches) { // Eğer kayıtlı tercih yoksa OS tercihine bak
+    enableDarkMode();
+    } else {
+    disableDarkMode(); // Varsayılan olarak aydınlık mod
+    }
+    }
+    
+    function enableDarkMode() {
+    body.classList.add('dark-mode');
+    if (darkModeToggle) { // Buton varsa metnini güncelle
+    darkModeToggle.textContent = '💡 Aydınlık Mod';
+    }
+    localStorage.setItem('theme', 'dark');
+    }
+    
+    function disableDarkMode() {
+    body.classList.remove('dark-mode');
+    if (darkModeToggle) { // Buton varsa metnini güncelle
+    darkModeToggle.textContent = '🌙 Karanlık Mod';
+    }
+    localStorage.setItem('theme', 'light');
+    }
+    
+    // Butona tıklama olayı
+    if (darkModeToggle) {
+    darkModeToggle.addEventListener('click', () => {
+    if (body.classList.contains('dark-mode')) {
+    disableDarkMode();
+    } else {
+    enableDarkMode();
+    }
+    });
+    }
+    
+    // İşletim sistemi tema değişikliğini dinle
+    prefersDarkScheme.addEventListener('change', (event) => {
+    // Kullanıcının manuel bir tercihi yoksa OS değişikliğine uy
+    // VEYA kullanıcı manuel tercihini OS ile aynı yönde değiştirdiyse
+    const currentTheme = localStorage.getItem('theme');
+    if (!currentTheme || (currentTheme === 'dark' && event.matches) || (currentTheme === 'light' && !event.matches)) {
+    if (event.matches) {
+    enableDarkMode();
+    } else {
+    disableDarkMode();
+    }
+    }
+    });
+    
+    // Sayfa ilk yüklendiğinde temayı uygula
+    document.addEventListener('DOMContentLoaded', loadThemePreference);
     </script>
+
       
 
 </body>
