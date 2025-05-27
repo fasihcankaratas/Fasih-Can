@@ -91,6 +91,17 @@
 <style>
  /* 1. Body ve genel arkaplan */
 body.dark-mode {
+    body.dark-mode button,
+body.dark-mode input[type="button"],
+body.dark-mode input[type="submit"] {
+  background-color: #444 !important;  /* Koyu ama görünebilir */
+  color: #eee !important;             /* Açık renk yazı */
+  border: 1px solid #888 !important;  /* Hafif kontrast */
+  padding: 8px 16px;
+  cursor: pointer;
+  display: inline-block;              /* Görünürlük için */
+  opacity: 1 !important;
+}
   background-color: #121212 !important;
   color: #e0e0e0 !important;
   transition: background-color 0.3s ease, color 0.3s ease;
