@@ -232,75 +232,48 @@
         color: #eee !important;
     }
 
-/* Dark Mode için en geniş kapsamlı footer ve iletişim görünürlük stili */
+    /* Dark Mode için en geniş kapsamlı footer ve iletişim görünürlük stili */
+    body.dark-mode footer,
+    body.dark-mode footer * {
+        color: #ddd !important;
+        background-color: transparent !important;
+    }
 
-/* Footer ve altındaki tüm elemanların yazı rengini açık yap */
-body.dark-mode footer,
-body.dark-mode footer * {
-  color: #ddd !important;
-  background-color: transparent !important; /* Arka planı transparan bırak */
-}
+    body.dark-mode footer {
+        background-color: #111 !important;
+    }
 
-/* Footer arka planını koyu yap */
-body.dark-mode footer {
-  background-color: #111 !important;
-}
+    body.dark-mode footer a,
+    body.dark-mode footer a:hover {
+        color: #9ecfff !important;
+    }
 
-/* Footer içindeki linkler açık renk olsun */
-body.dark-mode footer a,
-body.dark-mode footer a:hover {
-  color: #9ecfff !important;
-}
+    body.dark-mode #contact,
+    body.dark-mode #contact *,
+    body.dark-mode .contact-info,
+    body.dark-mode .contact-info * {
+        color: #ddd !important;
+        background-color: transparent !important;
+    }
 
-/* Eğer iletişim kısmı başka container’larda ise onların da yazı rengi açık olsun */
-body.dark-mode #contact,
-body.dark-mode #contact *,
-body.dark-mode .contact-info,
-body.dark-mode .contact-info * {
-  color: #ddd !important;
-  background-color: transparent !important;
-}
+    body.dark-mode footer h1,
+    body.dark-mode footer h2,
+    body.dark-mode footer h3,
+    body.dark-mode footer h4,
+    body.dark-mode footer h5,
+    body.dark-mode footer h6,
+    body.dark-mode footer p,
+    body.dark-mode footer li,
+    body.dark-mode footer span {
+        color: #ddd !important;
+    }
 
-/* Footer içindeki başlıklar, paragraflar, span, li gibi tüm metin elemanları */
-body.dark-mode footer h1,
-body.dark-mode footer h2,
-body.dark-mode footer h3,
-body.dark-mode footer h4,
-body.dark-mode footer h5,
-body.dark-mode footer h6,
-body.dark-mode footer p,
-body.dark-mode footer li,
-body.dark-mode footer span {
-  color: #ddd !important;
-}
-
-/* Eğer footer veya iletişim alanında input, textarea, button gibi form elemanları varsa */
-body.dark-mode footer input,
-body.dark-mode footer textarea,
-body.dark-mode footer button {
-  background-color: #222 !important;
-  color: #eee !important;
-  border-color: #555 !important;
-}
-
-/* Responsive için buton pozisyonu */
-@media (max-width: 768px) {
-  #dark-mode-toggle {
-    position: fixed;
-    bottom: 10px;   /* Alt kenardan 10px yukarı */
-    right: 15px;    /* Sağ kenardan 15px içeride */
-    top: auto;      /* top özelliğini sıfırla */
-  }
-}
-
-/* Buton normal pozisyon */
-#dark-mode-toggle {
-  position: fixed;
-  top: 25px;
-  right: 25px;
-  z-index: 1100;
-}
-
+    body.dark-mode footer input,
+    body.dark-mode footer textarea,
+    body.dark-mode footer button {
+        background-color: #222 !important;
+        color: #eee !important;
+        border-color: #555 !important;
     }
 
     /* --- Karanlık modda sosyal ikon renkleri --- */
@@ -322,19 +295,16 @@ body.dark-mode footer button {
     /* --- Responsive (mobil) buton konumu --- */
     @media (max-width: 768px) {
         #darkModeToggle {
-            top: 25px !important;
-            /* Mobilde biraz daha aşağıda */
+            top: auto !important;
+            /* üst konumu iptal et */
+            bottom: 10px !important;
+            /* alt kenardan 10px yukarı */
+            right: 15px !important;
+            /* sağdan 15px içeride */
         }
     }
-
-    /* --- Butonun masaüstü pozisyonu kesinleştirme (üstte kalması için) --- */
-    #darkModeToggle {
-        position: fixed;
-        top: 15px;
-        right: 15px;
-        z-index: 1100;
-    }
 </style>
+
     
 <body class="index-page"><!-- Sayfa gövdesi, 'index-page' sınıfı sayfa stilini belirler -->
 
