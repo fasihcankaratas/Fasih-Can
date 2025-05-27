@@ -89,25 +89,7 @@
   ======================================================== -->
 </head>
 <style>
-    /* Normal mod - sol menü veya sidebar yazıları */
-    #sidebar,
-    /* sidebar id'si örnek, kendi sitendekini koy */
-    .sidebar,
-    /* veya .sidebar class'ı */
-    nav,
-    /* menü varsa */
-    .menu-text
-
-    /* senin kullandığın class/id ise buraya yaz */
-        {
-        background-color: #222;
-        /* Koyu ama sosyal medya simgeleri ile uyumlu arka plan */
-        color: #eee !important;
-        /* Yazı rengini kesin açık yap, !important ile zorla */
-        /* font-weight: 600; istersen yazıyı biraz daha kalın yapar */
-    }
-
-    /* --- Genel Body Stil --- */
+    /* --- Genel Body Stil (Normal Mod) --- */
     body {
         background-color: #ffffff;
         color: #222222;
@@ -115,7 +97,7 @@
         transition: background-color 0.4s ease, color 0.4s ease;
     }
 
-    /* --- Başlıklar, paragraflar, linkler --- */
+    /* --- Başlıklar, paragraflar, liste, span, linkler --- */
     h1,
     h2,
     h3,
@@ -128,10 +110,10 @@
     a {
         transition: color 0.4s ease;
         color: inherit;
-        /* Varsayılan rengi koru */
+        /* Varsayılan rengi korur */
     }
 
-    /* --- Linkler normal --- */
+    /* --- Linkler normal hali --- */
     a {
         color: #0066cc;
         text-decoration: none;
@@ -139,18 +121,42 @@
 
     a:hover {
         text-decoration: underline;
+        color: #004999;
     }
 
-    /* --- Menü, header vb. örnek koyu mod uyumu için --- */
+    /* --- Menü, header, footer normal mod --- */
     header,
     nav,
     footer {
-        transition: background-color 0.4s ease, color 0.4s ease;
         background-color: #f5f5f5;
         color: #222;
+        transition: background-color 0.4s ease, color 0.4s ease;
     }
 
-    /* --- Buton her durumda görünür kalsın --- */
+    /* --- Sol Menü / Sidebar normal mod --- */
+    #sidebar,
+    .sidebar,
+    nav,
+    .menu-text {
+        background-color: #222;
+        /* Koyu, sosyal medya simgeleri ile uyumlu */
+        color: #eee !important;
+        /* Kesin açık yazı rengi */
+        transition: background-color 0.4s ease, color 0.4s ease;
+        /* font-weight: 600; isteğe bağlı kalınlık */
+    }
+
+    /* --- Section, main, sayfa başlıkları normal mod --- */
+    section,
+    main,
+    .page-title,
+    .starter-section {
+        background-color: #fff;
+        color: #222;
+        transition: background-color 0.4s ease, color 0.4s ease;
+    }
+
+    /* --- Karanlık Mod Butonu normal ve hover --- */
     #darkModeToggle {
         position: fixed;
         top: 15px;
@@ -162,7 +168,7 @@
         font-weight: bold;
         cursor: pointer;
         border-radius: 5px;
-        z-index: 9999;
+        z-index: 1100;
         transition: background-color 0.3s ease, color 0.3s ease;
     }
 
@@ -170,13 +176,14 @@
         background-color: #004999;
     }
 
-    /* --- DARK MODE STİLİ --- */
+    /* --- Karanlık Mod Genel Body ve Renkler --- */
     body.dark-mode {
         background-color: #121212 !important;
         color: #e0e0e0 !important;
+        transition: background-color 0.4s ease, color 0.4s ease;
     }
 
-    /* Dark modda başlıklar, paragraflar, linkler */
+    /* --- Karanlık modda başlıklar, paragraflar, liste, span --- */
     body.dark-mode h1,
     body.dark-mode h2,
     body.dark-mode h3,
@@ -189,6 +196,7 @@
         color: #e0e0e0 !important;
     }
 
+    /* --- Karanlık modda linkler --- */
     body.dark-mode a {
         color: #4ea1ff !important;
     }
@@ -197,156 +205,71 @@
         color: #90caff !important;
     }
 
-    /* Dark modda header, nav, footer */
+    /* --- Karanlık modda header, nav, footer --- */
     body.dark-mode header,
     body.dark-mode nav,
     body.dark-mode footer {
         background-color: #1f1f1f !important;
         color: #e0e0e0 !important;
+        transition: background-color 0.4s ease, color 0.4s ease;
     }
 
-    /* Dark modda buton stili */
+    /* --- Karanlık modda sol menü/sidebar renkleri --- */
+    body.dark-mode #sidebar,
+    body.dark-mode .sidebar,
+    body.dark-mode nav,
+    body.dark-mode .menu-text {
+        background-color: #222 !important;
+        color: #eee !important;
+    }
+
+    /* --- Karanlık modda section, main, sayfa başlıkları --- */
+    body.dark-mode section,
+    body.dark-mode main,
+    body.dark-mode .page-title,
+    body.dark-mode .starter-section {
+        background-color: #181818 !important;
+        color: #eee !important;
+    }
+
+    /* --- Karanlık modda footer stili --- */
+    body.dark-mode footer,
+    body.dark-mode #footer,
+    body.dark-mode .footer {
+        background-color: #111 !important;
+        color: #ddd !important;
+    }
+
+    /* --- Karanlık modda sosyal ikon renkleri --- */
+    body.dark-mode .social-links a {
+        color: #9ecfff !important;
+    }
+
+    /* --- Karanlık modda buton stili --- */
     body.dark-mode #darkModeToggle {
         background-color: #444;
         color: #eee;
+        transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     body.dark-mode #darkModeToggle:hover {
         background-color: #666;
     }
 
-    /* Butonun da üstte kalması için */
-    #dark-mode-toggle {
-        position: fixed;
-        top: 15px;
-        /* biraz aşağı aldım */
-        right: 15px;
-        z-index: 1100;
-    }
-
-    /* Normal modda body ve section yazı renkleri */
-    body {
-        background-color: #fff;
-        color: #222;
-        /* Koyu yazı */
-    }
-
-    section,
-    main,
-    .page-title,
-    .starter-section {
-        color: #222;
-        background-color: #fff;
-    }
-
-    body.dark-mode {
-        background-color: #121212;
-        /* koyu siyah ton */
-        color: #eee;
-        /* açık renk yazı */
-    }
-
-    /* Butun önemli containerlar, sectionlar için */
-    body.dark-mode section,
-    body.dark-mode main,
-    body.dark-mode .page-title,
-    body.dark-mode .starter-section,
-    body.dark-mode header,
-    body.dark-mode footer {
-        background-color: #181818;
-        color: #eee;
-    }
-
-    /* Linklerin ve ikonların görünürlüğü için */
-    body.dark-mode a,
-    body.dark-mode a:hover,
-    body.dark-mode .navmenu ul li a {
-        color: #9ecfff;
-    }
-
-    /* Menü arka planı */
-    body.dark-mode header.header {
-        background-color: #222;
-    }
-
-    body.dark-mode footer,
-    /* footer id/class örneği */
-    body.dark-mode #footer,
-    body.dark-mode .footer {
-        color: #ddd !important;
-        /* Çok açık, okunabilir renk */
-        background-color: #111 !important;
-        /* Eğer arka plan koyu değilse koyulaştır */
-    }
-
-    /* Sosyal ikonlar */
-    body.dark-mode .social-links a {
-        color: #9ecfff;
-    }
-
-    /* Butonun mobilde biraz aşağıda görünmesi için */
+    /* --- Responsive (mobil) buton konumu --- */
     @media (max-width: 768px) {
-        #dark-mode-toggle {
+        #darkModeToggle {
             top: 25px !important;
-            /* Üstten 25px boşluk */
+            /* Mobilde biraz daha aşağıda */
         }
     }
 
-    /* Butonun normal hali için (masaüstü vs) */
-    #dark-mode-toggle {
+    /* --- Butonun masaüstü pozisyonu kesinleştirme (üstte kalması için) --- */
+    #darkModeToggle {
         position: fixed;
         top: 15px;
-        /* Masaüstünde 15px */
         right: 15px;
         z-index: 1100;
-    }
-
-    /* Normal modda sol menü arka planı */
-    #sidebar {
-        /* veya menü elementinin id/class'ı neyse onu kullan */
-        background-color: #222;
-        /* Sosyal medya simgelerinin arka planıyla aynı renk */
-        color: #eee;
-        /* Yazılar okunabilir olsun */
-    }
-
-
-    /* -- EKLEME: Anasayfa, Özet vs yazan yeri koyu yap -- */
-    /* Burada örnek id/class isimlerini koydum, kendi sayfanda değiştir */
-    #sidebar .menu-text,
-    /* ya da uygun selector */
-    nav.summary,
-    /* Özet kısmı varsa */
-    aside.sidebar-summary
-
-    /* varsa sidebar özet için */
-        {
-        background-color: #222;
-        color: #eee !important;
-    }
-
-    /* -- EKLEME: İletişim kısmı arka planı -- */
-    #contact,
-    /* id varsa */
-    .contact-section,
-    /* class varsa */
-    footer.contact-footer
-
-    /* footerda iletişim kısmı varsa */
-        {
-        background-color: #222;
-        color: #eee !important;
-    }
-
-    /* DARK MODE uyumlu iletişim ve özet bölümü */
-    body.dark-mode #sidebar .menu-text,
-    body.dark-mode nav.summary,
-    body.dark-mode aside.sidebar-summary,
-    body.dark-mode #contact,
-    body.dark-mode .contact-section,
-    body.dark-mode footer.contact-footer {
-        background-color: #111 !important;
-        color: #ddd !important;
     }
 </style>
     
