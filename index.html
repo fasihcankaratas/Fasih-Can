@@ -89,40 +89,10 @@
   ======================================================== -->
 </head>
 <style>
-    body.dark-mode {
-    background-color: #121212 !important;
-    color: #ffffff !important;
-  }
-
-  .dark-mode .section-title h2,
-  .dark-mode .section-title p,
-  .dark-mode h1,
-  .dark-mode h2,
-  .dark-mode h3,
-  .dark-mode p,
-  .dark-mode a {
-    color: #ffffff !important;
-  }
-
-  .dark-mode .header,
-  .dark-mode .page-title,
-  .dark-mode .footer {
-    background-color: #1e1e1e !important;
-  }
-
-  .dark-mode .navmenu a {
-    color: #ddd !important;
-  }
-
-  .dark-mode .navmenu a:hover,
-  .dark-mode .navmenu li.active > a {
-    color: #fff !important;
-  }
-
-  .dark-toggle-btn {
+   .dark-toggle-btn {
     position: fixed;
     top: 20px;
-    right: 20px;
+    right: 80px; /* Burayı 20px yerine 80px yapıyoruz */
     background: #000;
     color: #fff;
     border: none;
@@ -130,6 +100,13 @@
     border-radius: 30px;
     cursor: pointer;
     z-index: 10000;
+  }
+
+  @media (max-width: 768px) {
+    .dark-toggle-btn {
+      top: 70px;
+      right: 20px;
+    }
   }
 
 </style>
