@@ -232,12 +232,72 @@
         color: #eee !important;
     }
 
-    /* --- Karanlık modda footer stili --- */
-    body.dark-mode footer,
-    body.dark-mode #footer,
-    body.dark-mode .footer {
-        background-color: #111 !important;
-        color: #ddd !important;
+/* Dark Mode için en geniş kapsamlı footer ve iletişim görünürlük stili */
+
+/* Footer ve altındaki tüm elemanların yazı rengini açık yap */
+body.dark-mode footer,
+body.dark-mode footer * {
+  color: #ddd !important;
+  background-color: transparent !important; /* Arka planı transparan bırak */
+}
+
+/* Footer arka planını koyu yap */
+body.dark-mode footer {
+  background-color: #111 !important;
+}
+
+/* Footer içindeki linkler açık renk olsun */
+body.dark-mode footer a,
+body.dark-mode footer a:hover {
+  color: #9ecfff !important;
+}
+
+/* Eğer iletişim kısmı başka container’larda ise onların da yazı rengi açık olsun */
+body.dark-mode #contact,
+body.dark-mode #contact *,
+body.dark-mode .contact-info,
+body.dark-mode .contact-info * {
+  color: #ddd !important;
+  background-color: transparent !important;
+}
+
+/* Footer içindeki başlıklar, paragraflar, span, li gibi tüm metin elemanları */
+body.dark-mode footer h1,
+body.dark-mode footer h2,
+body.dark-mode footer h3,
+body.dark-mode footer h4,
+body.dark-mode footer h5,
+body.dark-mode footer h6,
+body.dark-mode footer p,
+body.dark-mode footer li,
+body.dark-mode footer span {
+  color: #ddd !important;
+}
+
+/* Eğer footer veya iletişim alanında input, textarea, button gibi form elemanları varsa */
+body.dark-mode footer input,
+body.dark-mode footer textarea,
+body.dark-mode footer button {
+  background-color: #222 !important;
+  color: #eee !important;
+  border-color: #555 !important;
+}
+
+/* Responsive için buton pozisyonu */
+@media (max-width: 768px) {
+  #dark-mode-toggle {
+    top: 25px !important;
+  }
+}
+
+/* Buton normal pozisyon */
+#dark-mode-toggle {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 1100;
+}
+
     }
 
     /* --- Karanlık modda sosyal ikon renkleri --- */
