@@ -89,28 +89,28 @@
   ======================================================== -->
 </head>
 <style>
-body.dark-mode {
-    background-color: #121212 !important;
-    color: #f1f1f1 !important;
+  body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
   }
 
-  body.dark-mode a {
-    color: #80cbc4 !important;
-  }
-
-  body.dark-mode .dark-background {
-    background-color: #1e1e1e !important;
-  }
-
-  body.dark-mode .light-background {
-    background-color: #2c2c2c !important;
-  }
-
+  body.dark-mode header,
+  body.dark-mode footer,
+  body.dark-mode .dark-background,
+  body.dark-mode .light-background,
   body.dark-mode .navmenu {
-    background-color: #1e1e1e !important;
+    background-color: #1f1f1f;
   }
 
-  body.dark-mode .navmenu a {
+  body.dark-mode a,
+  body.dark-mode h1,
+  body.dark-mode h2,
+  body.dark-mode h3,
+  body.dark-mode h4,
+  body.dark-mode h5,
+  body.dark-mode h6,
+  body.dark-mode p,
+  body.dark-mode span {
     color: #ffffff !important;
   }
 
@@ -118,16 +118,27 @@ body.dark-mode {
     color: #80cbc4 !important;
   }
 
-  body.dark-mode .page-title h1,
-  body.dark-mode .section-title h2,
-  body.dark-mode .section-title p {
-    color: #ffffff !important;
+  .dark-toggle-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #444;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 9999;
+  }
+
+  .dark-toggle-btn:hover {
+    background: #666;
   }
 </style>
 </style>
 <body class="index-page"><!-- Sayfa gövdesi, 'index-page' sınıfı sayfa stilini belirler -->
 
-    
+    <button class="dark-toggle-btn" onclick="toggleDarkMode()">🌙 Dark Mode</button>
 
     <header id="header" class="header dark-background d-flex flex-column"><!-- Üst kısım, sabit menü ve profil alanı -->
         <i class="header-toggle d-xl-none bi bi-list"></i><!-- Mobilde açılır menü ikonu -->
@@ -1106,8 +1117,6 @@ body.dark-mode {
         </section><!-- /Contact Section --> <!-- İletişim bölümünün sonu -->
 
     </main> <!-- Ana içerik alanının kapanışı -->
-
-    <button class="dark-toggle-btn">🌙 Dark Mode</button>
 
     <footer id="footer" class="footer position-relative light-background">
         <!-- Sayfanın alt kısmındaki footer bölümü -->
