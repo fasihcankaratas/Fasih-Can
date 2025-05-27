@@ -89,52 +89,152 @@
   ======================================================== -->
 </head>
 <style>
-  body.dark-mode {
-    background-color: #121212;
-    color: #ffffff;
-  }
+ /* 1. Body ve genel arkaplan */
+body.dark-mode {
+  background-color: #121212 !important;
+  color: #e0e0e0 !important;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
 
-  body.dark-mode header,
-  body.dark-mode footer,
-  body.dark-mode .dark-background,
-  body.dark-mode .light-background,
-  body.dark-mode .navmenu {
-    background-color: #1f1f1f;
-  }
+/* 2. Ana container, section ve içerik blokları */
+body.dark-mode .container,
+body.dark-mode .section,
+body.dark-mode .content,
+body.dark-mode header,
+body.dark-mode footer,
+body.dark-mode nav,
+body.dark-mode .navmenu,
+body.dark-mode .main,
+body.dark-mode .page-title,
+body.dark-mode .breadcrumbs,
+body.dark-mode .starter-section {
+  background-color: #1f1f1f !important;
+  color: #e0e0e0 !important;
+  border-color: #333333 !important;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
 
-  body.dark-mode a,
-  body.dark-mode h1,
-  body.dark-mode h2,
-  body.dark-mode h3,
-  body.dark-mode h4,
-  body.dark-mode h5,
-  body.dark-mode h6,
-  body.dark-mode p,
-  body.dark-mode span {
-    color: #ffffff !important;
-  }
+/* 3. Yazılar */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6,
+body.dark-mode p,
+body.dark-mode a,
+body.dark-mode span,
+body.dark-mode li,
+body.dark-mode strong,
+body.dark-mode em,
+body.dark-mode label,
+body.dark-mode button {
+  color: #e0e0e0 !important;
+  transition: color 0.3s ease;
+}
 
-  body.dark-mode .navmenu a:hover {
-    color: #80cbc4 !important;
-  }
+/* 4. Linkler ve hoverları */
+body.dark-mode a {
+  color: #80cbc4 !important;
+  text-decoration: none !important;
+  transition: color 0.3s ease;
+}
 
-  .dark-toggle-btn {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: #444;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 5px;
-    cursor: pointer;
-    z-index: 9999;
-  }
+body.dark-mode a:hover,
+body.dark-mode a:focus {
+  color: #4db6ac !important;
+  text-decoration: underline !important;
+}
 
-  .dark-toggle-btn:hover {
-    background: #666;
-  }
-</style>
+/* 5. Butonlar */
+body.dark-mode button,
+body.dark-mode input[type="button"],
+body.dark-mode input[type="submit"] {
+  background-color: #333333 !important;
+  color: #e0e0e0 !important;
+  border: 1px solid #555555 !important;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+body.dark-mode button:hover,
+body.dark-mode input[type="button"]:hover,
+body.dark-mode input[type="submit"]:hover {
+  background-color: #555555 !important;
+  border-color: #80cbc4 !important;
+  cursor: pointer;
+}
+
+/* 6. Inputlar, textarea, select */
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select {
+  background-color: #222222 !important;
+  color: #e0e0e0 !important;
+  border: 1px solid #444444 !important;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+body.dark-mode input:focus,
+body.dark-mode textarea:focus,
+body.dark-mode select:focus {
+  border-color: #80cbc4 !important;
+  outline: none !important;
+}
+
+/* 7. Kartlar, kutucuklar, box-shadow (varsa) */
+body.dark-mode .card,
+body.dark-mode .box,
+body.dark-mode .panel {
+  background-color: #222222 !important;
+  color: #e0e0e0 !important;
+  border: 1px solid #333333 !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.7) !important;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 8. Border renkleri */
+body.dark-mode hr,
+body.dark-mode .divider,
+body.dark-mode .bordered {
+  border-color: #444444 !important;
+}
+
+/* 9. Listeler */
+body.dark-mode ul,
+body.dark-mode ol {
+  color: #e0e0e0 !important;
+}
+
+/* 10. Img filtre: koyulaştırmak için */
+body.dark-mode img {
+  filter: brightness(0.8) contrast(0.9);
+  transition: filter 0.3s ease;
+}
+
+/* 11. Scroll bar (modern tarayıcılar için) */
+body.dark-mode ::-webkit-scrollbar {
+  width: 8px;
+  background-color: #1f1f1f;
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb {
+  background-color: #555555;
+  border-radius: 4px;
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb:hover {
+  background-color: #80cbc4;
+}
+
+/* 12. Diğer sık kullanılan elementler */
+body.dark-mode table,
+body.dark-mode th,
+body.dark-mode td {
+  border-color: #444444 !important;
+  color: #e0e0e0 !important;
+  background-color: #1e1e1e !important;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
 </style>
 <body class="index-page"><!-- Sayfa gövdesi, 'index-page' sınıfı sayfa stilini belirler -->
 
