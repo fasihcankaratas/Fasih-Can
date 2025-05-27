@@ -1165,13 +1165,24 @@ body.dark-mode {
     <!-- Projenin ana JavaScript dosyası -->
 
     <script>
-        const toggleBtn = document.querySelector('.dark-toggle-btn');
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
 
-        toggleBtn.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-        });
+            // Tercihi sakla
+            if (document.body.classList.contains("dark-mode")) {
+                localStorage.setItem("theme", "dark");
+            } else {
+                localStorage.setItem("theme", "light");
+            }
+        }
+
+        // Sayfa yüklenince tema kontrolü
+        window.onload = function () {
+            if (localStorage.getItem("theme") === "dark") {
+                document.body.classList.add("dark-mode");
+            }
+        };
     </script>
-      
       
 
 </body>
