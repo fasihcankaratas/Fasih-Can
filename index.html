@@ -91,7 +91,7 @@
 <style>
  /* 1. Body ve genel arkaplan */
 body.dark-mode {
-    body.dark-mode button,
+body.dark-mode button,
 body.dark-mode input[type="button"],
 body.dark-mode input[type="submit"] {
   background-color: #444 !important;  /* Koyu ama görünebilir */
@@ -246,6 +246,39 @@ body.dark-mode td {
   background-color: #1e1e1e !important;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+/* Dark mode genel stil */
+body.dark-mode {
+  background-color: #121212 !important;
+  color: #e0e0e0 !important;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Link ve yazılar koyu modda */
+body.dark-mode a,
+body.dark-mode h1, body.dark-mode h2, body.dark-mode h3,
+body.dark-mode p, body.dark-mode li, body.dark-mode span {
+  color: #e0e0e0 !important;
+}
+
+/* Menü arka plan koyu */
+body.dark-mode header {
+  background-color: #1e1e1e !important;
+}
+
+/* Buton koyu modda görünür kalsın */
+body.dark-mode button,
+body.dark-mode input[type="button"],
+body.dark-mode input[type="submit"] {
+  background-color: #333 !important;
+  color: #eee !important;
+  border: 1px solid #555 !important;
+  opacity: 1 !important;
+  cursor: pointer;
+  display: inline-block;
+}
+
+
 </style>
 <body class="index-page"><!-- Sayfa gövdesi, 'index-page' sınıfı sayfa stilini belirler -->
 
@@ -1287,9 +1320,10 @@ body.dark-mode td {
     <!-- Projenin ana JavaScript dosyası -->
 
     <script>
-        const darkToggle = document.getElementById("darkToggleBtn");
-        darkToggle.addEventListener("click", () => {
-            document.body.classList.toggle("dark-mode");
+        const btn = document.getElementById('darkModeToggle');
+
+        btn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
         });
     </script>
       
