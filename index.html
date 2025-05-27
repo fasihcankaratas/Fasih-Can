@@ -221,10 +221,11 @@ body.dark-mode header.header {
   background-color: #222;
 }
 
-/* Footer */
-body.dark-mode footer.footer {
-  background-color: #222;
-  color: #ccc;
+/* Dark mode’da footer yazıları daha belirgin olsun */
+body.dark-mode footer {
+  color: #ccc; /* Daha açık gri yap */
+  background-color: #111; /* Eğer arka plan koyu değilse koyu yap */
+  /* gerekirse padding/margin vs de ayarla */
 }
 
 /* Sosyal ikonlar */
@@ -245,6 +246,12 @@ body.dark-mode .social-links a {
   top: 15px;  /* Masaüstünde 15px */
   right: 15px;
   z-index: 1100;
+}
+
+/* Normal modda sol menü arka planı */
+#sidebar {  /* veya menü elementinin id/class'ı neyse onu kullan */
+  background-color: #222;  /* Sosyal medya simgelerinin arka planıyla aynı renk */
+  color: #eee; /* Yazılar okunabilir olsun */
 }
 
 
